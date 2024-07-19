@@ -8,21 +8,13 @@ import {Room} from "../room";
   styleUrls: [ './dashboard.component.scss' ]
 })
 export class DashboardComponent implements OnInit {
-  // heroes: Hero[] = [];
 
   rooms: Room[] = [];
 
-  //constructor(private heroService: HeroService) { }
   constructor(private roomService: RoomService) { }
   ngOnInit(): void {
-    //this.getHeroes();
     this.getRooms()
   }
-
-  // getHeroes(): void {
-  //   this.heroService.getHeroes()
-  //     .subscribe(heroes => this.heroes = heroes.slice(1, 5));
-  // }
 
   getRooms(): void {
     this.roomService.getRooms()
