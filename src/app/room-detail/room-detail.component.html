@@ -1,0 +1,15 @@
+<div *ngIf="room">
+
+  <h2>{{room.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{room.id}}</div>
+  <div>
+    <label for="hero-name">Room name: </label>
+    <input id="hero-name" [(ngModel)]="room.name" placeholder="name">
+  </div>
+  <div>
+    <button type="button" (click)="goBack()">go back</button>
+  </div>
+  <div>
+    <button type="button" (click)="save()">save</button>
+  </div>
+</div>

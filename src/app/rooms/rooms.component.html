@@ -1,0 +1,20 @@
+<h2>The student dorm</h2>
+<div>
+  <label for="new-room">Room name: </label>
+  <input id="new-room" #roomName />
+
+  <!-- (click) passes input value to add() and then clears the input -->
+ <button type="button" class="add-button" (click)="add(roomName.value); roomName.value=''">
+   Add new room
+ </button>
+</div>
+
+<ul class="rooms">
+  <li *ngFor="let room of rooms">
+    <a routerLink="/detail/{{room.id}}">
+      <span class="badge">{{room.id}}</span> {{room.name}}
+    </a>
+    <button type="button" class="delete" title="delete room"
+            (click)="delete(room)">x</button>
+  </li>
+</ul>
